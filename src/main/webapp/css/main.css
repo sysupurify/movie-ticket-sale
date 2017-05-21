@@ -1,0 +1,18 @@
+body {
+
+}
+
+#Head {
+	background-repeat: no-repeat;
+	height: 60px;
+	padding: 5px 5px 5px 5px;
+}
+
+#logo {
+	height: 60px;
+}
+
+#Login, #Register {
+	width: 100px;
+	height: 60px;
+}
