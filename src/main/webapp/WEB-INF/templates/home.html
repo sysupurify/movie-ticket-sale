@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<head>
+    <title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/home.css" th:href="@{/css/home.css}"
+    />
+</head>
+
+<body>
+    <p>首页</p>
+    <a shiro:guest="" th:href="@{/login}">登录</a>
+    <p shiro:user="">你好, <span shiro:hasRole="vip">VIP</span>
+        <shiro:principal/>. <a th:href="@{/logout}">登出</a></p>
+    <a shiro:user="" th:href="@{/menu}">点餐</a>
+    <p>todo:产品查询，推荐菜品</p>
+</body>
+
+</html>

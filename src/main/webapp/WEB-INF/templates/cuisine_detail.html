@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}"
+    />
+</head>
+
+<body id="body">
+    <h1>Detail for product: <span th:text="${prod.name}">Hot Garlic</span></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>PICRURE</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>IN STOCK</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>
+                <img alt="" src="../../../images/gtvglogo.png" th:src="@{/images/gtvglogo.png}" />
+            </td>
+            <td th:text="${prod.name}">Onions</td>
+            <td th:if="${prod.vipDiscount} == false" th:text="${prod.price}">2.41</td>
+            <td th:if="${prod.vipDiscount} == true">
+                <span shiro:hasRole="vip" th:text="${prod.price} * 0.95"></span>
+                <span shiro:hasRole="vip" style="color:red;"> VIP</span>
+                <span shiro:lacksRole="vip" th:text="${prod.price}">2.41</span>
+            </td>
+            <td th:text="${prod.inStock}? #{true} : #{false}">yes</td>
+        </tr>
+    </table>
+</body>
+
+</html>

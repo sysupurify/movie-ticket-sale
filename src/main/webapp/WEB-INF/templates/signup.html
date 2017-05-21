@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<head>
+    <title>注册</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/home.css" th:href="@{/css/home.css}"
+    />
+</head>
+
+<body>
+    <form method="post">
+        <h3 th:text="${msg}"></h3> username:
+        <input type="text" name="username" />
+        <br /> password:
+        <input type="password" name="password">
+        <br/>
+        <input type="submit" />
+    </form>
+    <a th:href="@{/login}">登录</a>
+</body>
+
+</html>
