@@ -12,7 +12,7 @@
           http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.1.xsd">
 
 	<!-- 扫描注解Bean -->
-	<context:component-scan base-package="org.firework.sfs">
+	<context:component-scan base-package="org.sysupurify.tickets">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
@@ -21,14 +21,14 @@
 	<aop:aspectj-autoproxy expose-proxy="true" />
 
 	<!-- 临时用于数据库数据的初始化 -->
-	<bean id="init" class="org.firework.sfs.application.Init"
+	<bean id="init" class="org.sysupurify.tickets.application.Init"
 		init-method="doInit"></bean>
 
 	<!-- 数据库连接池 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://192.168.199.227:3306/test_sfs?createDatabaseIfNotExist=true&amp;useSSL=false" />
+			value="jdbc:mysql://localhost:3306/test_sfs?createDatabaseIfNotExist=true&amp;useSSL=false" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>
@@ -46,7 +46,7 @@
 	</bean>
 
 	<!-- Realm实现 -->
-	<bean id="userRealm" class="org.firework.sfs.realm.UserRealm">
+	<bean id="userRealm" class="org.sysupurify.tickets.realm.UserRealm">
 		<property name="credentialsMatcher" ref="credentialsMatcher" />
 	</bean>
 
@@ -107,7 +107,7 @@
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
 		</property>
 		<!--扫描包 -->
-		<property name="packagesToScan" value="org.firework.sfs.business" />
+		<property name="packagesToScan" value="org.sysupurify.tickets.business" />
 
 		<!--基本配置 -->
 		<property name="jpaProperties">
@@ -137,7 +137,7 @@
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<!--配置spring data -->
-	<!--<jpa:repositories base-package="org.firework.sfs.business.entity" entity-manager-factory-ref="entityManagerFactory"></jpa:repositories> -->
+	<!--<jpa:repositories base-package="org.sysupurify.tickets.business.entity" entity-manager-factory-ref="entityManagerFactory"></jpa:repositories> -->
 
 
 	<!-- RememberMe 摘自 http://jinnianshilongnian.iteye.com/blog/2031823 -->
