@@ -1,5 +1,5 @@
 body {
-
+	min-width: 600px;
 }
 
 #Head {
@@ -15,4 +15,12 @@ body {
 #Login, #Register {
 	width: 100px;
 	height: 60px;
+}
+
+#Movie {
+	margin-top: 50px;
+}
+
+.MovieItem {
+	height: 200px;
 }
