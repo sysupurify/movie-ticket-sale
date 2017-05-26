@@ -26,9 +26,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.sysupurify.tickets.business.entity.Role;
 import org.sysupurify.tickets.business.entity.User;
-import org.sysupurify.tickets.business.service.IRoleService;
 import org.sysupurify.tickets.business.service.IUserService;
 
 @Controller
@@ -36,8 +34,6 @@ public class BuyController {
 
 	@Autowired
 	IUserService userService;
-	@Autowired
-	IRoleService roleService;
 
 	@RequestMapping("/buy")
 	public String getBuy(Model model) {
@@ -47,12 +43,7 @@ public class BuyController {
 	@RequestMapping(value = "/buy", method = RequestMethod.POST)
 	public String buy(Model model) {
 		Subject subject = SecurityUtils.getSubject();
-		if (userService.isVip(subject.getPrincipal().toString())) {
-			return "buy";
-		}
 		User user = userService.findByUsername((String) subject.getPrincipal());
-		Role vip = roleService.findByRole("vip");
-		userService.correlationRoles(user, vip);
 		return "redirect:/menu";
 	}
 }

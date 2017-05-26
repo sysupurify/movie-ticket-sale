@@ -6,31 +6,21 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.sysupurify.tickets.business.entity.Product;
-import org.sysupurify.tickets.business.entity.Role;
 import org.sysupurify.tickets.business.entity.User;
 import org.sysupurify.tickets.business.service.IProductService;
-import org.sysupurify.tickets.business.service.IRoleService;
 import org.sysupurify.tickets.business.service.IUserService;
 
 public class Init {
 	@Autowired
 	private IUserService userService;
 	@Autowired
-	private IRoleService roleService;
-	@Autowired
 	private IProductService productService;
 
 	public void doInit() {
-		// 创建VIP角色
-		Role role = new Role();
-		role.setRole("vip");
-		role.setDescription("额外享受95折");
 
-		// 创建一个VIP用户
+		// 创建一个用户
 		User user = createUser("a", "a");
 		userService.create(user);
-		roleService.create(role);
-		userService.correlationRoles(user, role);
 
 		initProduct();
 
