@@ -13,8 +13,6 @@ public interface IScreeningDao {
 	void delete(long userId);
 
 	Screening findOne(long userId);
-
-	Screening findByName(String productName);
 	
 	List<Screening> findAll();
 

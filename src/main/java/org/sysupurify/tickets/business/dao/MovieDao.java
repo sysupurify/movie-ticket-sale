@@ -2,8 +2,10 @@ package org.sysupurify.tickets.business.dao;
 
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
 import org.sysupurify.tickets.business.entity.Movie;
 
+@Repository
 public class MovieDao extends AbstractJpaDAO<Movie> implements IMovieDao {
 	public MovieDao() {
 		super();
