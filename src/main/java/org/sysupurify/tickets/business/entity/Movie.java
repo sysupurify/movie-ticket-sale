@@ -21,8 +21,8 @@ public class Movie implements Serializable {
 	private Long id = null;
 	private String name = null; // 电影名字
 	private String price = null; // 电影票价
-	private String type = null; // 电影类型
-	private String release = null; // 电影上映时间
+	private String genre = null; // 电影类型
+	private String releasetime = null; // 电影上映时间
 	private String duration = null; // 电影时长
 	private String language = null; // 电影语言
 	
@@ -30,14 +30,14 @@ public class Movie implements Serializable {
 		super();
 	}
 	
-	public Movie(final String name, final String price, final String type, 
-			final String release, final String duration, final String language) {
+	public Movie(final String name, final String price, final String genre, 
+			final String releasetime, final String duration, final String language) {
 		
 		super();
 		this.name = name;
 		this.price = price;
-		this.type = type;
-		this.release = release;
+		this.genre = genre;
+		this.releasetime = releasetime;
 		this.duration = duration;
 		this.language = language;
 	}
@@ -66,20 +66,20 @@ public class Movie implements Serializable {
 		this.price = price;
 	}
 	
-	public String getType() {
-		return this.type;
+	public String getGenre() {
+		return this.genre;
 	}
 	
-	public void setType(final String type) {
-		this.type = type;
+	public void setGenre(final String genre) {
+		this.genre = genre;
 	}
 	
-	public String getRelease() {
-		return this.release;
+	public String getReleasetime() {
+		return this.releasetime;
 	}
 	
-	public void setRelease(final String release) {
-		this.release = release;
+	public void setReleasetime(final String releasetime) {
+		this.releasetime = releasetime;
 	}
 	
 	public String getDuration() {

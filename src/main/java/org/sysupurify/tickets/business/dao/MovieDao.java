@@ -11,7 +11,7 @@ public class MovieDao extends AbstractJpaDAO<Movie> implements IMovieDao {
 	}
 
 	public Movie findByName(String movieName) {
-		String sql = "select id, name, price, type, release, duration, language from movies m where name = :name";
+		String sql = "select id, name, price, genre, releasetime, duration, language from movies m where name = :name";
 		Query query = entityManager.createNativeQuery(sql, Movie.class);
 		query.setParameter("name", movieName);
 		return (Movie) query.getSingleResult();
