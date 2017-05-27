@@ -28,37 +28,37 @@ public class Init {
 
 	private void initProduct() {
 
-		final Product prod1 = new Product("Fresh Sweet Basil", true, new BigDecimal("4.99"), true);
-		final Product prod2 = new Product("Italian Tomato", false, new BigDecimal("1.25"), true);
-		final Product prod3 = new Product("Yellow Bell Pepper", true, new BigDecimal("2.50"), true);
-		final Product prod4 = new Product("Old Cheddar", true, new BigDecimal("18.75"), true);
-		final Product prod5 = new Product("Extra Virgin Coconut Oil", true, new BigDecimal("6.34"), true);
-		final Product prod6 = new Product("Organic Tomato Ketchup", true, new BigDecimal("1.99"), true);
-		final Product prod7 = new Product("Whole Grain Oatmeal Cereal", true, new BigDecimal("3.07"), true);
-		final Product prod8 = new Product("Traditional Tomato & Basil Sauce", true, new BigDecimal("2.58"), true);
-		final Product prod9 = new Product("Quinoa Flour", true, new BigDecimal("3.02"), true);
-		final Product prod10 = new Product("Grapefruit Juice", true, new BigDecimal("2.58"), true);
-		final Product prod11 = new Product("100% Pure Maple Syrup", true, new BigDecimal("5.98"), true);
-		final Product prod12 = new Product("Marinara Pasta Sauce", false, new BigDecimal("2.08"), true);
-		final Product prod13 = new Product("Vanilla Puff Cereal", false, new BigDecimal("1.75"), true);
-		final Product prod14 = new Product("Extra Virgin Oil", false, new BigDecimal("5.01"), true);
-		final Product prod15 = new Product("Roasted Garlic Pasta Sauce", true, new BigDecimal("2.40"), true);
-		final Product prod16 = new Product("Canned Minestrone Soup", true, new BigDecimal("2.19"), true);
-		final Product prod17 = new Product("Almond Milk 1L", true, new BigDecimal("3.24"), true);
-		final Product prod18 = new Product("Organic Chicken & Wild Rice Soup", true, new BigDecimal("3.17"), true);
+		final Product prod1 = new Product("Fresh Sweet Basil", true, new BigDecimal("4.99"));
+		final Product prod2 = new Product("Italian Tomato", false, new BigDecimal("1.25"));
+		final Product prod3 = new Product("Yellow Bell Pepper", true, new BigDecimal("2.50"));
+		final Product prod4 = new Product("Old Cheddar", true, new BigDecimal("18.75"));
+		final Product prod5 = new Product("Extra Virgin Coconut Oil", true, new BigDecimal("6.34"));
+		final Product prod6 = new Product("Organic Tomato Ketchup", true, new BigDecimal("1.99"));
+		final Product prod7 = new Product("Whole Grain Oatmeal Cereal", true, new BigDecimal("3.07"));
+		final Product prod8 = new Product("Traditional Tomato & Basil Sauce", true, new BigDecimal("2.58"));
+		final Product prod9 = new Product("Quinoa Flour", true, new BigDecimal("3.02"));
+		final Product prod10 = new Product("Grapefruit Juice", true, new BigDecimal("2.58"));
+		final Product prod11 = new Product("100% Pure Maple Syrup", true, new BigDecimal("5.98"));
+		final Product prod12 = new Product("Marinara Pasta Sauce", false, new BigDecimal("2.08"));
+		final Product prod13 = new Product("Vanilla Puff Cereal", false, new BigDecimal("1.75"));
+		final Product prod14 = new Product("Extra Virgin Oil", false, new BigDecimal("5.01"));
+		final Product prod15 = new Product("Roasted Garlic Pasta Sauce", true, new BigDecimal("2.40"));
+		final Product prod16 = new Product("Canned Minestrone Soup", true, new BigDecimal("2.19"));
+		final Product prod17 = new Product("Almond Milk 1L", true, new BigDecimal("3.24"));
+		final Product prod18 = new Product("Organic Chicken & Wild Rice Soup", true, new BigDecimal("3.17"));
 		final Product prod19 = new Product("Purple Carrot, Blackberry, Quinoa & Greek Yogurt", true,
-				new BigDecimal("8.88"), true);
-		final Product prod20 = new Product("Pumpkin, Carrot and Apple Juice", false, new BigDecimal("3.90"), true);
-		final Product prod21 = new Product("Organic Canola Oil", true, new BigDecimal("10.13"), true);
-		final Product prod22 = new Product("Potato Corn Tortilla Chips", true, new BigDecimal("2.44"), true);
-		final Product prod23 = new Product("Canned Corn Chowder Soup", true, new BigDecimal("2.30"), true);
-		final Product prod24 = new Product("Organic Lemonade Juice", true, new BigDecimal("2.48"), true);
-		final Product prod25 = new Product("Spicy Basil Dressing", true, new BigDecimal("4.72"), true);
-		final Product prod26 = new Product("Sweet Agave Nectar", true, new BigDecimal("6.46"), true);
-		final Product prod27 = new Product("Dark Roasted Peanut Butter", false, new BigDecimal("3.48"), true);
-		final Product prod28 = new Product("Unsweetened Lemon Green Tea", true, new BigDecimal("18.34"), true);
-		final Product prod29 = new Product("Whole Grain Flakes Cereal", true, new BigDecimal("3.52"), true);
-		final Product prod30 = new Product("Berry Chewy Granola Bars", true, new BigDecimal("4.00"), true);
+				new BigDecimal("8.88"));
+		final Product prod20 = new Product("Pumpkin, Carrot and Apple Juice", false, new BigDecimal("3.90"));
+		final Product prod21 = new Product("Organic Canola Oil", true, new BigDecimal("10.13"));
+		final Product prod22 = new Product("Potato Corn Tortilla Chips", true, new BigDecimal("2.44"));
+		final Product prod23 = new Product("Canned Corn Chowder Soup", true, new BigDecimal("2.30"));
+		final Product prod24 = new Product("Organic Lemonade Juice", true, new BigDecimal("2.48"));
+		final Product prod25 = new Product("Spicy Basil Dressing", true, new BigDecimal("4.72"));
+		final Product prod26 = new Product("Sweet Agave Nectar", true, new BigDecimal("6.46"));
+		final Product prod27 = new Product("Dark Roasted Peanut Butter", false, new BigDecimal("3.48"));
+		final Product prod28 = new Product("Unsweetened Lemon Green Tea", true, new BigDecimal("18.34"));
+		final Product prod29 = new Product("Whole Grain Flakes Cereal", true, new BigDecimal("3.52"));
+		final Product prod30 = new Product("Berry Chewy Granola Bars", true, new BigDecimal("4.00"));
 
 		productService.create(prod1);
 		productService.create(prod2);
