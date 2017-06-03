@@ -2,8 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:cache="http://www.springframework.org/schema/cache"
 	xsi:schemaLocation="
           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
@@ -113,16 +112,17 @@
 		<property name="jpaProperties">
 			<props>
 				<!--命名策略 -->
-				<!--<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop> -->
+				<!-- <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop> -->
 				<!--基本配置 -->
-				<!--<prop key="hibernate.format_sql">true</prop> -->
+				<prop key="hibernate.format_sql">true</prop>
 				<prop key="hibernate.show_sql">false</prop>
 				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<!--二级缓存 -->
-				<!--<prop key="hibernate.cache.use_query_cache">true</prop> <prop key="hibernate.cache.use_second_level_cache">true</prop> 
-					<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory 
-					</prop> -->
+				<!--<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory
+				</prop>-->
 			</props>
 		</property>
 		<property name="sharedCacheMode" value="ENABLE_SELECTIVE" />
@@ -137,7 +137,8 @@
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<!--配置spring data -->
-	<!--<jpa:repositories base-package="org.sysupurify.tickets.business.entity" entity-manager-factory-ref="entityManagerFactory"></jpa:repositories> -->
+	<!--<jpa:repositories base-package="org.sysupurify.tickets.business.entity" 
+		entity-manager-factory-ref="entityManagerFactory"></jpa:repositories> -->
 
 
 	<!-- RememberMe 摘自 http://jinnianshilongnian.iteye.com/blog/2031823 -->
@@ -161,7 +162,7 @@
 	</bean>
 
 	<!-- ehcache -->
-	<cache:annotation-driven cache-manager="cacheManager" />  
+	<cache:annotation-driven cache-manager="cacheManager" />
 
 	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
 		<property name="cacheManager" ref="ehcache"></property>

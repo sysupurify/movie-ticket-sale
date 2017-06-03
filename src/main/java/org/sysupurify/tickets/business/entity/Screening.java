@@ -3,14 +3,17 @@
 package org.sysupurify.tickets.business.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,23 +25,23 @@ public class Screening implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id = null;
+	
 	@ManyToOne
 	@JoinColumn(name = "movie_id")
 	private Movie movie = null;
-	private String time = null;
-	private ArrayList<Boolean> seat = new ArrayList<Boolean>(); // 定义座位是否可用
+	
+	private Date time = null;
+	
+	@OneToMany(mappedBy = "screening", cascade = CascadeType.ALL)  
+	private Set<Seat> seats;  
 	 
 	public Screening() {
 		super();
 	}
 	
-	public Screening(final Movie movie, final String time) {
+	public Screening(final Movie movie, final Date time) {
 		this.movie = movie;
 		this.time = time;
-		// 初始化座位是否可用
-		for (int i = 0; i < 16 * 16; i++) {
-			seat.add(true);
-		}
 	}
 	
 	public Movie getMovie() {
@@ -49,21 +52,20 @@ public class Screening implements Serializable {
 		this.movie = movie;
 	}
 	
-	public String getTime() {
+	public Date getTime() {
 		return this.time;
 	}
 	
-	public void setTime(final String time) {
+	public void setTime(final Date time) {
 		this.time = time;
 	}
-	
-	public Boolean getSeatAvailable(final int index) {
-		return seat.get(index);
+
+	public Set<Seat> getSeats() {
+		return seats;
 	}
-	
-	// 票已预订，将位置设为不可用
-	public void setSeatAvailable(final int index) {
-		seat.set(index, false);
+
+	public void setSeats(Set<Seat> seats) {
+		this.seats = seats;
 	}
 	
 }

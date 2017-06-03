@@ -1,13 +1,17 @@
 package org.sysupurify.tickets.application;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.sysupurify.tickets.business.entity.Movie;
 import org.sysupurify.tickets.business.entity.Product;
+import org.sysupurify.tickets.business.entity.Screening;
 import org.sysupurify.tickets.business.entity.User;
+import org.sysupurify.tickets.business.service.IMovieService;
 import org.sysupurify.tickets.business.service.IProductService;
+import org.sysupurify.tickets.business.service.IScreeningService;
 import org.sysupurify.tickets.business.service.IUserService;
 
 public class Init {
@@ -16,6 +20,11 @@ public class Init {
 	@Autowired
 	private IProductService productService;
 
+	@Autowired
+	private IMovieService movieService;
+	@Autowired
+	private IScreeningService screeningService;
+
 	public void doInit() {
 
 		// 创建一个用户
@@ -23,7 +32,11 @@ public class Init {
 		userService.create(user);
 
 		initProduct();
-
+		
+		Movie movie = new Movie();
+		movieService.create(movie);
+		screeningService.create(new Screening(movie, new Date()));
+ 
 	}
 
 	private void initProduct() {

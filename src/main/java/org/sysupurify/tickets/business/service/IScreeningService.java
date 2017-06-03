@@ -7,6 +7,8 @@ public interface IScreeningService {
 	void create(Screening screening);
 
 	Screening findById(final Integer id);
+	
+	
 
 }
 

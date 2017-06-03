@@ -52,7 +52,7 @@ public class LoginController {
 			model.addAttribute("cached_username", username);
 			return "login";
 		} else {
-			return "redirect:/menu";
+			return "redirect:/";
 		}
 	}
 }

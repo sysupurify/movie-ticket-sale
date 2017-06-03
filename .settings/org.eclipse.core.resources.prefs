@@ -6,7 +6,6 @@ encoding//src/main/java/org/sysupurify/tickets/business/service/UserService.java
 encoding//src/main/java/org/sysupurify/tickets/realm/UserRealm.java=UTF-8
 encoding//src/main/java/org/sysupurify/tickets/web/controller/LoginController.java=UTF-8
 encoding//src/main/java/org/sysupurify/tickets/web/controller/LogoutController.java=UTF-8
-encoding//src/main/java/org/sysupurify/tickets/web/controller/OrderController.java=UTF-8
 encoding//src/main/java/org/sysupurify/tickets/web/controller/SignupController.java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/test/java=UTF-8

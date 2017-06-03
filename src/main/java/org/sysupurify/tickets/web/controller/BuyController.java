@@ -19,31 +19,46 @@
  */
 package org.sysupurify.tickets.web.controller;
 
+import java.util.List;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.sysupurify.tickets.business.entity.Screening;
 import org.sysupurify.tickets.business.entity.User;
+import org.sysupurify.tickets.business.service.IMovieService;
+import org.sysupurify.tickets.business.service.IScreeningService;
 import org.sysupurify.tickets.business.service.IUserService;
 
 @Controller
 public class BuyController {
 
 	@Autowired
+	IMovieService movieService;
+	@Autowired
+	IScreeningService screeningService;
+	@Autowired
 	IUserService userService;
 
-	@RequestMapping("/buy")
-	public String getBuy(Model model) {
+	@RequestMapping("/buy/{screeningId}")
+	public String getBuy(Model model, @PathVariable String screeningId) {
+		Screening screening = screeningService.findById(Integer.valueOf(screeningId));
+		model.addAttribute("screening", screening);
 		return "buy";
 	}
 
-	@RequestMapping(value = "/buy", method = RequestMethod.POST)
-	public String buy(Model model) {
+	@RequestMapping(value = "/buy/{screeningId}", method = RequestMethod.POST)
+	public String postBuy(Model model, List<Long> seatId) {
 		Subject subject = SecurityUtils.getSubject();
 		User user = userService.findByUsername((String) subject.getPrincipal());
-		return "redirect:/menu";
+		if (user == null) // TODO 判断逻辑？
+			return "redirect:/menu";
+		return "pay";
 	}
+	
 }

@@ -10,6 +10,9 @@ public interface IMovieService {
 
 	List<Movie> findAll();
 
+	// 按年月日查找
+//	List<Movie> findByDate();
+
 	Movie findById(final Integer id);
 
 	Movie findByName(String movieName);
