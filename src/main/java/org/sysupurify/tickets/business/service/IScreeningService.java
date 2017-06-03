@@ -1,5 +1,7 @@
 package org.sysupurify.tickets.business.service;
 
+import java.util.List;
+
 import org.sysupurify.tickets.business.entity.Screening;
 
 public interface IScreeningService {
@@ -8,7 +10,7 @@ public interface IScreeningService {
 
 	Screening findById(final Integer id);
 	
-	
+	List<Screening> findAll();
 
 }
 

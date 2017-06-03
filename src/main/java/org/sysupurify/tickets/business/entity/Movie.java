@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,7 +31,7 @@ public class Movie implements Serializable {
 	private int duration = 0; // 电影时长（分钟）
 	private String language = null; // 电影语言
 	
-	@OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)  
+	@OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, fetch = FetchType.EAGER)  
 	private List<Screening> screenings;  
 	
 	public Movie() {

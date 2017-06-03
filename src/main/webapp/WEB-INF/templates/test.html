@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<head>
+    <title>登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/home.css" th:href="@{/css/login.css}"
+    />
+</head>
+
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>movie name</th>
+            <th>screenings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="m : ${allMovies}">
+            <td th:text="${m.name}">name</td>
+            <td>
+              <ul>
+                <li th:each="s : ${m.screenings}">
+                  <label th:text="${{s.time}}">13/01/2011</label>
+	              <ul>
+	                <li th:each="se : ${s.seats}">
+	                  <label th:text="${{se.available}}">true</label>
+	                </li>
+	              </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <p>------------</p>
+      
+    <table>
+        <thead>
+          <tr>
+            <th>time</th>
+            <th>seats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="s : ${allScreenings}">
+            <td th:text="${{s.time}}">time</td>
+            <td>
+              <ul>
+                <li th:each="se : ${s.seats}">
+                  <label th:text="${{se.row}}">empty</label>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+</body>
+
+</html>

@@ -33,8 +33,9 @@ public class Init {
 
 		initProduct();
 		
-		Movie movie = new Movie();
+		Movie movie = new Movie("hehe", 1, "none", new Date(), 10, "cn");
 		movieService.create(movie);
+		screeningService.create(new Screening(movie, new Date()));
 		screeningService.create(new Screening(movie, new Date()));
  
 	}

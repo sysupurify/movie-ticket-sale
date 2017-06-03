@@ -25,22 +25,20 @@ public class Seat implements Serializable {
 
 	private int row = 0;
 	private int col = 0;
-	private boolean empty = true;
+	
+//	@org.hibernate.annotations.Type(type="yes_no")
+	private boolean available = true;
+	 
+	public Seat() {
+		super();
+	}
 
 	public Seat(final Screening screening, final int row, final int col) {
 		this.screening = screening;
 		this.row = row;
 		this.col = col;
 	}
-
-	boolean getEmpty() {
-		return empty;
-	}
-
-	public void setEmpty(boolean empty) {
-		this.empty = empty;
-	}
-
+	
 	public int getRow() {
 		return row;
 	}
@@ -55,6 +53,14 @@ public class Seat implements Serializable {
 
 	public void setCol(int col) {
 		this.col = col;
+	}
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
 	}
 
 }

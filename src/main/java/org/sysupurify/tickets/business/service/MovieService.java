@@ -20,17 +20,17 @@ public class MovieService implements IMovieService {
 		movieDao.create(movie);
 	}
 	
-	@Cacheable(value="movie")
+//	@Cacheable(value="movie")
 	public List<Movie> findAll() {
 		return movieDao.findAll();
 	}
 
-	@Cacheable(value="movie")
+//	@Cacheable(value="movie")
 	public Movie findById(final Integer id) {
 		return movieDao.findOne(id);
 	}
 	
-	@Cacheable(value="movie")
+//	@Cacheable(value="movie")
 	public Movie findByName(String movieName) {
 		return movieDao.findByName(movieName);
 	}
