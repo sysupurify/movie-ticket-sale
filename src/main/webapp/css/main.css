@@ -13,3 +13,19 @@ body {
 	width: 100px;
 	height: 60px;
 }
+
+.Poster {
+	width: 30%;
+	height: 30%;
+	float: left;
+	margin-bottom: 40px;
+}
+
+.MovieDescription {
+	float: left;
+	width: 400px;
+	font-size: 20px;
+	margin-left: 50px;
+	margin-top: 50px;
+	text-align: left;
+}
