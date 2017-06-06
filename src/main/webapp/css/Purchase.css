@@ -1,0 +1,76 @@
+#logo {
+	padding: 0 0 0 0;
+}
+
+
+#SeatLayout {
+	border: 4px solid black;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	width: 800px;
+	height: 400px;
+}
+
+#Screen {
+	border: 2px solid black;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	height: 50px;
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#Seats {
+	background-color: yellow;
+	margin-top: 50px;
+}
+
+.SeatRow {
+	margin-left: auto;
+	margin-right: auto;
+	height: 30px;
+	width: 720px;
+}
+
+
+.Location {
+	height: 24px;
+	width: 24px;
+	margin: 3px 6px 3px 6px;
+	border: 1px solid black;
+	float: left;
+}
+
+#BuyTickets {
+	width: 800px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+}
+
+#MoneyPerTic {
+	float: left;
+	font-size: 20px;
+}
+
+#TotalNum {
+	float: left;
+	font-size: 20px;
+	margin-left: 100px;
+}
+
+#TotalMoney {
+	float: left;
+	font-size: 20px;
+	margin-left: 100px;
+}
+
+#MakeSureAndPay, #MoneyPerTic, #TotalMoney, #TotalNum {
+	margin-top: 10px;
+}
