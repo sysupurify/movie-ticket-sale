@@ -1,6 +1,6 @@
 body {
 	min-width: 600px;
-	background-image: url("../pic/mainbg.jpg");
+	background-color: black;
 	background-repeat: repeat-x;
 	background-attachment: fixed;
 }
