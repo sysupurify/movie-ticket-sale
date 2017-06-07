@@ -26,9 +26,11 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.sysupurify.tickets.business.entity.Movie;
 import org.sysupurify.tickets.business.entity.Screening;
 import org.sysupurify.tickets.business.entity.User;
 import org.sysupurify.tickets.business.service.IMovieService;
@@ -45,13 +47,6 @@ public class BuyController {
 	@Autowired
 	IUserService userService;
 
-	@RequestMapping("/buy/{screeningId}")
-	public String getBuy(Model model, @PathVariable String screeningId) {
-		Screening screening = screeningService.findById(Integer.valueOf(screeningId));
-		model.addAttribute("screening", screening);
-		return "buy";
-	}
-
 	@RequestMapping(value = "/buy/{screeningId}", method = RequestMethod.POST)
 	public String postBuy(Model model, List<Long> seatId) {
 		Subject subject = SecurityUtils.getSubject();
@@ -59,6 +54,22 @@ public class BuyController {
 		if (user == null) // TODO 判断逻辑？
 			return "redirect:/menu";
 		return "pay";
+	}
+	
+	@RequestMapping(value = "/purchase/{movieId}", method = RequestMethod.GET)
+	public String chooseMovie(Model model, @PathVariable String movieId) {
+		Movie movie = movieService.findById(Integer.valueOf(movieId));
+		model.addAttribute("movie", movie);
+		return "purchase";
+	}
+	
+	@RequestMapping(value = "/purchase/{movieId}/{screeningId}", method = RequestMethod.GET)
+	public String chooseScreening(Model model, @PathVariable String movieId, @PathVariable String screeningId) {
+		Movie movie = movieService.findById(Integer.valueOf(movieId));
+		model.addAttribute("movie", movie);
+		Screening screening = screeningService.findById(Integer.valueOf(screeningId));
+		model.addAttribute("screening", screening);
+		return "purchase";
 	}
 	
 }
