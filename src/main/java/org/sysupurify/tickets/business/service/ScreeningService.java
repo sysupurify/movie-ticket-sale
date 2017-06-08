@@ -23,7 +23,7 @@ public class ScreeningService implements IScreeningService {
 	public void create(Screening screening) {
 		screeningDao.create(screening);
 		for (int i = 0; i < 2; i++)
-			for (int j = 0; j < 2; j++)
+			for (int j = 0; j < 1; j++)
 				seatDao.create(new Seat(screening, i + 1, j + 1));
 	}
 

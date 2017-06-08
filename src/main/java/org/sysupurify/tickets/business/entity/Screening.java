@@ -4,6 +4,7 @@ package org.sysupurify.tickets.business.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "screenings")
-public class Screening implements Serializable {
+public class Screening implements Serializable, Comparable<Screening> {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -34,7 +35,7 @@ public class Screening implements Serializable {
 	private Date time = null;
 	
 	@OneToMany(mappedBy = "screening", cascade = CascadeType.ALL, fetch = FetchType.EAGER)  
-	private Set<Seat> seats;
+	private List<Seat> seats;
 	 
 	public Screening() {
 		super();
@@ -61,12 +62,18 @@ public class Screening implements Serializable {
 		this.time = time;
 	}
 
-	public Set<Seat> getSeats() {
+	public List<Seat> getSeats() {
 		return seats;
 	}
 
-	public void setSeats(Set<Seat> seats) {
+	public void setSeats(List<Seat> seats) {
 		this.seats = seats;
+	}
+
+	public int compareTo(Screening o) {
+		if (o == null)
+			throw new NullPointerException();
+		return time.compareTo(o.time);
 	}
 	
 }

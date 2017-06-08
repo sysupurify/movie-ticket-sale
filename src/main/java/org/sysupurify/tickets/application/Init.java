@@ -1,6 +1,7 @@
 package org.sysupurify.tickets.application;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -37,8 +38,12 @@ public class Init {
 		Movie movie2 = new Movie("The BFG", "brief_introduction2", 1, "魔幻", new Date(), 10, "cn", "m8.jpg");
 		movieService.create(movie);
 		movieService.create(movie2);
-		screeningService.create(new Screening(movie, new Date()));
-		screeningService.create(new Screening(movie, new Date()));
+		Calendar calendar = Calendar.getInstance();
+		Date now = new Date();
+		calendar.setTime(now);
+		calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) + 1);
+		screeningService.create(new Screening(movie, now));
+		screeningService.create(new Screening(movie, calendar.getTime()));
  
 	}
 
