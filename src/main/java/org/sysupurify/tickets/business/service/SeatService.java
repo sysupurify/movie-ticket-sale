@@ -13,7 +13,7 @@ import org.sysupurify.tickets.business.entity.Seat;
 
 @Service
 @Transactional
-public class ScreeningService implements IScreeningService {
+public class SeatService implements ISeatService {
 
 	@Autowired
 	IScreeningDao screeningDao;
@@ -21,17 +21,19 @@ public class ScreeningService implements IScreeningService {
 	ISeatDao seatDao;
 
 	public void create(Screening screening) {
-		screeningDao.create(screening);
+		for (int i = 0; i < 3; i++)
+			for (int j = 0; j < 3; j++)
+				seatDao.create(new Seat(screening, i + 1, j + 1));
 	}
 
 	@Cacheable(value = "screening")
-	public Screening findById(final Integer id) {
-		return screeningDao.findOne(id);
+	public Seat findById(final Integer id) {
+		return seatDao.findOne(id);
 	}
 	
 //	@Cacheable(value="movie")
-	public List<Screening> findAll() {
-		return screeningDao.findAll();
+	public List<Seat> findAll() {
+		return seatDao.findAll();
 	}
 
 }

@@ -133,5 +133,4 @@ public class Movie implements Serializable {
 	public void setPicName(String picName) {
 		this.picName = picName;
 	}
-	
 }

@@ -46,14 +46,6 @@ public class HomeController {
         return all;
     }
     
-    @ModelAttribute("allScreenings")
-    public List<Screening> allScreenings() {
-    	List<Screening> all = this.screeningService.findAll();
-    	for (Screening screening : all)
-    		System.out.println("#seat " + screening.getSeats().size());
-        return all;
-    }
-
 	@RequestMapping({"/", "main"})
 	public String home() {
 		return "main";

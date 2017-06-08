@@ -1,7 +1,9 @@
 package org.sysupurify.tickets.application;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,9 @@ import org.sysupurify.tickets.business.entity.User;
 import org.sysupurify.tickets.business.service.IMovieService;
 import org.sysupurify.tickets.business.service.IProductService;
 import org.sysupurify.tickets.business.service.IScreeningService;
+import org.sysupurify.tickets.business.service.ISeatService;
 import org.sysupurify.tickets.business.service.IUserService;
+import org.sysupurify.tickets.business.service.SeatService;
 
 public class Init {
 	@Autowired
@@ -24,6 +28,8 @@ public class Init {
 	private IMovieService movieService;
 	@Autowired
 	private IScreeningService screeningService;
+	@Autowired
+	private ISeatService seatService;
 
 	public void doInit() {
 
@@ -32,13 +38,17 @@ public class Init {
 		userService.create(user);
 
 		initProduct();
-
+		
 		Movie movie = new Movie("Light B/t Oceans", "brief_introduction", 1, "爱情片", new Date(), 10, "cn", "m7.jpg");
 		Movie movie2 = new Movie("The BFG", "brief_introduction2", 1, "魔幻", new Date(), 10, "cn", "m8.jpg");
 		movieService.create(movie);
 		movieService.create(movie2);
-		screeningService.create(new Screening(movie, new Date()));
-		screeningService.create(new Screening(movie, new Date()));
+		Screening screening1 = new Screening(movie, new Date());
+		Screening screening2 = new Screening(movie, new Date());
+		screeningService.create(screening1);
+		screeningService.create(screening2);
+		seatService.create(screening1);
+		seatService.create(screening2);
  
 	}
 
