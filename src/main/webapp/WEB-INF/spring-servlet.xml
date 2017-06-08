@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 改编自gtvg的gtvg-servlet.xml -->
+<!-- 原始改编自gtvg的gtvg-servlet.xml -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -17,6 +17,10 @@
 
 	<context:component-scan base-package="org.sysupurify.tickets.web.controller" />
 
+	<mvc:resources mapping="/bootstrap-3.3.7/**" location="/bootstrap-3.3.7/" />
+	<mvc:resources mapping="/bootstrap-3.3.7-dist/**"
+		location="/bootstrap-3.3.7-dist/" />
+	<mvc:resources mapping="/pic/**" location="/pic/" />
 	<mvc:resources mapping="/images/**" location="/images/" />
 	<mvc:resources mapping="/css/**" location="/css/" />
 	<mvc:resources mapping="/js/**" location="/js/" />
@@ -40,7 +44,8 @@
 
 	<!-- SpringTemplateEngine automatically applies SpringStandardDialect and -->
 	<!-- enables Spring's own MessageSource message resolution mechanisms. -->
-	<bean id="templateEngine" class="org.thymeleaf.TemplateEngine">
+	<bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+		<!-- 原本用过org.thymeleaf.TemplateEngine，但不能绑定对象。不知道区别 -->
 		<property name="templateResolver" ref="templateResolver" />
 		<!-- 用于thymleaf使用shiro标签 -->
 		<property name="additionalDialects">

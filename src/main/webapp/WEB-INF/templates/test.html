@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<head>
+    <title>登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<form action="#" th:action="@{/test}" th:object="${form}" method="post">
+  <input type="text" th:each="i : *{array}" th:field="*{array[__${iStat.index}__]}"></input>
+  <!-- <input type="text" th:field="*{array}"></input> -->
+  <br></br>
+  <input type="text" th:field="*{msg}">
+  <input type="checkbox" th:field="*{covered}" />
+  <button type="submit">submit</button>
+</form>
+
+    <table>
+        <thead>
+          <tr>
+            <th>movie name</th>
+            <th>screenings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="m : ${allMovies}">
+            <td th:text="${m.name}">name</td>
+            <td>
+              <ul>
+                <li th:each="s : ${m.screenings}">
+                  <label th:text="${{s.time}}">13/01/2011</label>
+	              <ul>
+	                <li th:each="se : ${s.seats}">
+	                  <label th:text="${{se.available}}">true</label>
+	                </li>
+	              </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <p>------------</p>
+      
+    <table>
+        <thead>
+          <tr>
+            <th>time</th>
+            <th>seats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="s : ${allScreenings}">
+            <td th:text="${{s.time}}">time</td>
+            <td>
+              <ul>
+                <li th:each="se : ${s.seats}">
+                  <label th:text="${{se.row}}">empty</label>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+</body>
+
+</html>

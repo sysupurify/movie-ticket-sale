@@ -1,0 +1,38 @@
+body {
+	min-width: 600px;
+	background-color: black;
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+}
+
+#logo {
+	padding: 0 0 0 0;
+}
+
+#Login, #Register {
+	width: 100px;
+	height: 60px;
+}
+
+.Poster {
+	width: 30%;
+	height: 30%;
+	float: left;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.MovieName {
+	float: left;
+	margin-left: 50px;
+	font-size: 30px;
+}
+
+.MovieDescription {
+	float: left;
+	width: 50%;
+	font-size: 20px;
+	margin-left: 50px;
+	margin-top: 50px;
+	text-align: left;
+}

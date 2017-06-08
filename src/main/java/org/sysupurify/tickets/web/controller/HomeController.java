@@ -19,15 +19,44 @@
  */
 package org.sysupurify.tickets.web.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.sysupurify.tickets.business.entity.Movie;
+import org.sysupurify.tickets.business.entity.Screening;
+import org.sysupurify.tickets.business.service.IMovieService;
+import org.sysupurify.tickets.business.service.IScreeningService;
 
 @Controller
 public class HomeController {
 
-	@RequestMapping("/")
+	@Autowired
+	IMovieService movieService;
+	@Autowired
+	IScreeningService screeningService;
+    
+    @ModelAttribute("allMovies")
+    public List<Movie> populateSeedStarters() {
+    	List<Movie> all = this.movieService.findAll();
+    	for (Movie movie : all)
+    		System.out.println("#screening " + movie.getScreenings().size());
+        return all;
+    }
+    
+    @ModelAttribute("allScreenings")
+    public List<Screening> allScreenings() {
+    	List<Screening> all = this.screeningService.findAll();
+    	for (Screening screening : all)
+    		System.out.println("#seat " + screening.getSeats().size());
+        return all;
+    }
+
+	@RequestMapping({"/", "main"})
 	public String home() {
-		return "home";
+		return "main";
 	}
 
 }

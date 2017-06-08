@@ -1,0 +1,59 @@
+body {
+	min-width: 600px;
+	background-color: black;
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+}
+
+#logo {
+	padding: 0 0 0 0;
+}
+
+#Login, #Register {
+	width: 100px;
+	height: 60px;
+}
+
+#MovieSection {
+	margin-top: 100px;
+	width: 800px;
+	height: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+#MovieList {
+	height: 800px;
+	width: 800px;
+	position: absolute;
+	z-index: 1;
+}
+
+.MovieItem {
+	height: 200px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.MoviePic {
+	height: 200px;
+	width: 160px;
+}
+
+.MovieName, .MovieActor, .MovieType, .MovieBuyIt {
+	height: 50px;
+	width: 640px;
+}
+
+#TransparentLayer {
+	width: 800px;
+	height: 800px;
+	background-color: white;
+	opacity: 0.50;
+	filter:alpha(opacity=50);  /*支持 IE 浏览器*/
+    -moz-opacity:0.50; /*支持 FireFox 浏览器*/
+	position: absolute;
+	z-index: 0;
+}

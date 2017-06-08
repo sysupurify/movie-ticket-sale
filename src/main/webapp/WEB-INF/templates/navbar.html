@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    	<script src="../../bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
+    	<script src="../../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    	<link href="../../css/Purchase.css" type="text/css" rel="stylesheet" media="screen" />
+    	<link href="../../css/navbar-fixed-top.css" rel="stylesheet">
+    	<link href="../../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    	<script src="../../js/ie-emulation-modes-warning.js"></script>
+    	<title>购票</title>
+	</head>
+	
+	<body>
+		    <!-- Fixed navbar -->
+	    <nav th:fragment="navbar" class="navbar navbar-default navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <img id="logo" class="navbar-brand" href="#" src="../../pic/logo.jpg" height="80px" th:src="@{/pic/logo.jpg}">
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	            <li><a href="#" th:href="@{/}">主页</a></li>
+	            <li><a href="#about" th:href="@{/ChooseMovie2}">选电影</a></li>
+	            <li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">日期<span class="caret"></span></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="#">Action</a></li>
+	                <li><a href="#">Another action</a></li>
+	                <li><a href="#">Something else here</a></li>
+	                <li role="separator" class="divider"></li>
+	                <li class="dropdown-header">Nav header</li>
+	                <li><a href="#">Separated link</a></li>
+	                <li><a href="#">One more separated link</a></li>
+	              </ul>
+	            </li>
+	            <li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">影院<span class="caret"></span></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="#">Action</a></li>
+	                <li><a href="#">Another action</a></li>
+	                <li><a href="#">Something else here</a></li>
+	                <li role="separator" class="divider"></li>
+	                <li class="dropdown-header">Nav header</li>
+	                <li><a href="#">Separated link</a></li>
+	                <li><a href="#">One more separated link</a></li>
+	              </ul>
+	            </li>
+	          </ul>
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="../navbar/">登陆</a></li>
+	            <li><a href="../navbar-static-top/">注册</a></li>
+	            <li><a href="./">退出<span class="sr-only">(current)</span></a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
+	</body>
+</html>

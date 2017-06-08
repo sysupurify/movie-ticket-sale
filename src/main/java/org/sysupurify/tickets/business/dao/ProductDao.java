@@ -36,7 +36,7 @@ public class ProductDao extends AbstractJpaDAO<Product> implements IProductDao {
 	}
 
 	public Product findByName(String productName) {
-		String sql = "select id, name, price, inStock, vipDiscount from products p where name = :name";
+		String sql = "select id, name, price, inStock from products p where name = :name";
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		query.setParameter("name", productName);
 		return (Product) query.getSingleResult();

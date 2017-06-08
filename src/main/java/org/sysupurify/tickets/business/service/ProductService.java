@@ -22,7 +22,6 @@ package org.sysupurify.tickets.business.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,21 +39,17 @@ public class ProductService implements IProductService {
 		productDao.create(product);
 	}
 	
-	
-	//@CachePut("product")
 	@Cacheable(value="product")
 	public List<Product> findAll() {
 		return productDao.findAll();
 	}
 
 	@Cacheable(value="product")
-	//@CachePut("product")
 	public Product findById(final Integer id) {
 		return productDao.findOne(id);
 	}
 	
 	@Cacheable(value="product")
-	//@CachePut("product")
 	public Product findByName(String productName) {
 		return productDao.findByName(productName);
 	}

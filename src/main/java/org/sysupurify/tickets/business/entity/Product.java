@@ -40,19 +40,16 @@ public class Product implements Serializable {
 	private String name = null;
 	private BigDecimal price = null;
 	private boolean inStock = false;
-	private boolean vipDiscount = true;
-	// private List<Comment> comments = new ArrayList<Comment>();
 
 	public Product() {
 		super();
 	}
 
-	public Product(final String name, final boolean inStock, final BigDecimal price, final boolean vipDiscount) {
+	public Product(final String name, final boolean inStock, final BigDecimal price) {
 		super();
 		this.name = name;
 		this.price = price;
 		this.inStock = inStock;
-		this.vipDiscount = vipDiscount;
 	}
 
 	public Long getId() {
@@ -86,17 +83,5 @@ public class Product implements Serializable {
 	public void setInStock(final boolean inStock) {
 		this.inStock = inStock;
 	}
-
-	public boolean getVipDiscount() {
-		return this.vipDiscount;
-	}
-
-	public void setVipDiscount(final boolean vipDiscount) {
-		this.vipDiscount = vipDiscount;
-	}
-
-	// public List<Comment> getComments() {
-	// return this.comments;
-	// }
 
 }
