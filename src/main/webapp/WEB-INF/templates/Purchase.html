@@ -67,25 +67,28 @@
 	    </nav>
     	<!--*/-->
 
-	    <div id="MovieContainer">
+	    <div id="MovieContainer" th:object="${movie}">
 	    	<div id="LeftPart">
-	    		<img class="Poster" src="../../pic/wonderwoman.jpg" th:src="@{/image/__${movie.picName}__}">
+	    		<img class="Poster" src="../../pic/wonderwoman.jpg" th:src="@{/images/__${movie.picName}__}">
 	    		<div id="MovieText">
-	    			<div id="MovieChineseName">片名：[[movie.name]]</div>
-	    			<div id="MovieEnglishName">英文名：[[movie.name]]</div>
-	    			<div id="MovieType">类型: [[movie.genre]]</div>
+	    			<div id="MovieChineseName" th:text="${movie.screenings}">片名：[[${movie.name}]]</div>
+	    			<div id="MovieEnglishName">英文名：[[${movie.name}]]</div>
+	    			<div id="MovieType">类型: [[${movie.genre}]]</div>
 	    			<div id="MovieMainActor">主演: 盖尔·加朵 / 克里斯·派恩</div>
-	    			<div id="MovieLanguage">语言: [[movie.language]]</div>
-	    			<div id="MovieDescription">简介：[[movie.brief]]</div>
+	    			<div id="MovieLanguage">语言: [[${movie.language}]]</div>
+	    			<div id="MovieDescription">简介：[[${movie.brief}]]</div>
 	    		</div>
 	    		<div id="Schedule">
 	    			<div id="ScheduleRow1">
-	    				<button class="btn btn-primary" type="button">11:45</button>
+	    				<button class="btn btn-primary" type="button" th:text="${movie}">11:45</button>
+    					<!--/*-->
 	    				<button class="btn btn-primary" type="button">12:30</button>
 	    				<button class="btn btn-primary" type="button">17:15</button>
 	    				<button class="btn btn-primary" type="button">19:20</button>
 	    				<button class="btn btn-primary" type="button">20:40</button>
+    					<!--*/-->
 	    			</div>
+    				<!--/*-->
 	    			<div id="ScheduleRow2">
 	    				<button class="btn btn-primary" type="button">11:45</button>
 	    				<button class="btn btn-primary" type="button">12:30</button>
@@ -93,6 +96,7 @@
 	    				<button class="btn btn-primary" type="button">19:20</button>
 	    				<button class="btn btn-primary" type="button">20:40</button>
 	    			</div>
+    				<!--*/-->
 	    		</div>
 	    	</div>
 
