@@ -18,12 +18,19 @@ body {
 	width: 30%;
 	height: 30%;
 	float: left;
-	margin-bottom: 40px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.MovieName {
+	float: left;
+	margin-left: 50px;
+	font-size: 30px;
 }
 
 .MovieDescription {
 	float: left;
-	width: 400px;
+	width: 50%;
 	font-size: 20px;
 	margin-left: 50px;
 	margin-top: 50px;

@@ -1,20 +1,34 @@
+body {
+	background-color: black;
+	color: white;
+}
+
 #logo {
 	padding: 0 0 0 0;
 }
 
-
-#SeatLayout {
-	border: 4px solid black;
-	border-radius: 5px;
+#MovieContainer {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#LeftPart {
+	width: 400px;
+	float: left;
+	margin-left: 50px;
+}
+
+#SeatLayout {
+	border: 4px solid white;
+	border-radius: 5px;
+	margin-left: 500px;
 	padding-top: 10px;
 	width: 800px;
 	height: 400px;
 }
 
 #Screen {
-	border: 2px solid black;
+	border: 2px solid white;
 	border-radius: 5px;
 	margin-left: auto;
 	margin-right: auto;
@@ -46,8 +60,7 @@
 #BuyTickets {
 	width: 800px;
 	height: 50px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 500px;
 	margin-top: 60px;
 }
 
@@ -70,4 +83,22 @@
 
 #MakeSureAndPay, #MoneyPerTic, #TotalMoney, #TotalNum {
 	margin-top: 10px;
+}
+
+.Poster {
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+
+#MovieText {
+	float: left;
+	width: 145px;
+	font-size: 10px;
+	margin-left: 5px;
+}
+
+.btn {
+	margin-right: 5px;
+	margin-top: 20px;
 }
