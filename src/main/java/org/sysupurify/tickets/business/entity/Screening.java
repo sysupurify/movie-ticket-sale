@@ -20,7 +20,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "screenings")
-public class Screening implements Serializable {
+public class Screening implements Serializable, Comparable<Screening> {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -68,6 +68,12 @@ public class Screening implements Serializable {
 
 	public void setSeats(List<Seat> seats) {
 		this.seats = seats;
+	}
+
+	public int compareTo(Screening o) {
+		if (o == null)
+			throw new NullPointerException();
+		return time.compareTo(o.time);
 	}
 	
 }

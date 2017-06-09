@@ -1,7 +1,7 @@
 package org.sysupurify.tickets.application;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -43,13 +43,15 @@ public class Init {
 		Movie movie2 = new Movie("The BFG", "brief_introduction2", 1, "魔幻", new Date(), 10, "cn", "m8.jpg");
 		movieService.create(movie);
 		movieService.create(movie2);
-		Screening screening1 = new Screening(movie, new Date());
-		Screening screening2 = new Screening(movie, new Date());
+		Calendar calendar = Calendar.getInstance();
+		Date now = new Date();
+		calendar.setTime(now);
+		calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) + 1);
+		Screening screening1 = new Screening(movie, now);		Screening screening2 = new Screening(movie, calendar.getTime());
 		screeningService.create(screening1);
 		screeningService.create(screening2);
 		seatService.create(screening1);
-		seatService.create(screening2);
- 
+		seatService.create(screening2); 
 	}
 
 	private void initProduct() {

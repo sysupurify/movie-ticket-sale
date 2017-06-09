@@ -14,9 +14,8 @@
 	</head>
 	
 	<body>
-		<div th:insert="navbar :: navbar"></div>
+	    <div th:insert="navbar :: navbar"></div>
 	    <!--/*-->
-
 		<!-- Fixed navbar -->
 	    <nav class="navbar navbar-default navbar-fixed-top">
 	      <div class="container">
@@ -84,12 +83,15 @@
 	    		</div>
 	    		<div id="Schedule">
 	    			<div id="ScheduleRow1">
-	    				<button class="btn btn-primary" type="button">11:45</button>
+	    				<button class="btn btn-primary" type="button" th:text="${movie}">11:45</button>
+    					<!--/*-->
 	    				<button class="btn btn-primary" type="button">12:30</button>
 	    				<button class="btn btn-primary" type="button">17:15</button>
 	    				<button class="btn btn-primary" type="button">19:20</button>
 	    				<button class="btn btn-primary" type="button">20:40</button>
+    					<!--*/-->
 	    			</div>
+    				<!--/*-->
 	    			<div id="ScheduleRow2">
 	    				<button class="btn btn-primary" type="button">11:45</button>
 	    				<button class="btn btn-primary" type="button">12:30</button>
@@ -97,6 +99,7 @@
 	    				<button class="btn btn-primary" type="button">19:20</button>
 	    				<button class="btn btn-primary" type="button">20:40</button>
 	    			</div>
+    				<!--*/-->
 	    		</div>
 	    	</div>
 
